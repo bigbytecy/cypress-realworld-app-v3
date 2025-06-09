@@ -1,6 +1,7 @@
 import detect from "detect-port";
 import chalk from "chalk";
 
+export const frontendPort = process.env.VITE_FRONTEND_PORT || "3000";
 export const backendPort = process.env.VITE_BACKEND_PORT || "4000";
 
 export const getBackendPort = async (): Promise<number | undefined> => {
