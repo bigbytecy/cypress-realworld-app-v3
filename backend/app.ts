@@ -119,8 +119,8 @@ app.use("/bankTransfers", bankTransferRoutes);
 
 app.use(express.static(join(__dirname, "../public")));
 
-getBackendPort().then((port) => {
-  app.listen(port, () => {
-    console.log(`Backend server listening on port ${port}`);
-  });
+const port = Number(process.env.PORT) || 4000;
+
+app.listen(port, () => {
+  console.log(`Backend server running on port ${port}`);
 });
