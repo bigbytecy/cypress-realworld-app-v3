@@ -139,9 +139,9 @@
     "wait-on": "^8.0.3"
   },
   "scripts": {
-    "render:install": "yarn install --cwd backend && yarn install --cwd frontend",
+    "render:install": "cd backend && yarn install",
     "render:build": "yarn --cwd frontend build",
-    "render:start": "node server.js",
+    "render:start": "cd backend && yarn dev",
     "dev": "cross-env NODE_ENV=development concurrently yarn:start:react yarn:start:api:watch",
     "dev:coverage": "cross-env NODE_ENV=development CYPRESS_COVERAGE=true concurrently yarn:start:react yarn:start:api:watch",
     "dev:auth0": "cross-env VITE_AUTH0=true NODE_ENV=development concurrently yarn:start:react yarn:start:api:watch",
